@@ -17,4 +17,51 @@ body {
   padding: 20px 0;
 }
 
+/* O margin auto faz com que os lados direito e esquerdo do container
+criem uma margem automática, de tamanho igual, centralizando o container. */
+.menu-container {
+  max-width: 960px;
+  margin: 0 auto; 
+}
+
+/* O display padrão da tag 'a' é por padrão inline, o que não permite que 
+pegar 100% do tamanho da imagem usada como link para a home. */
+
+/* O float left faz o elemento flutuar para o parâmetro definido, neste caso
+a esquerda, e, por padrão os demais elementos flutuarão para o lado dele. */
+a.menu-logo {
+  display: block;
+  float: left;
+  margin-left: 10px;
+}
+
+/* O float foi aplicado para que todos elementos da lista se mantivessem juntos.
+O float dificulta a identificação altura automática do container. 
+Right para gerar o espaço entre o logo e o nav.*/
+
+.menu-nav {
+  float: right;
+  margin-right: 10px;
+}
+
+/* Clear fix para ajustar os erros gerados pelo float no menu. */
+.menu::after, .menu::before {
+  content:"";
+  display: table;
+  clear: both;
+}
+
+.menu-nav li {
+  display: inline-block;
+}
+
+/* Cálculo pixels para em's: valor que é desejado (18 px nesse caso) dividido
+pela base dos navegadores, geralmente 16px. (18/16 = 1.125em).*/
+.menu-nav a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.125em;
+}
 
